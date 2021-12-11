@@ -1,11 +1,11 @@
 import displayMessage from "./components/displayMessage.js";
+import { saveToken, saveUser } from "./utils/storage.js";
 import { baseUrl } from "./settings/api.js";
 
 const form = document.querySelector("form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const message = document.querySelector(".message-container");
-
 
 form.addEventListener("submit", submitForm);
 
@@ -34,8 +34,8 @@ async function doLogin(username, password) {
         method: "POST",
         body: data,
         headers: {
-            "Content-Type": "application/json"
-        }
+            "Content-Type": "application/json",
+        },
     };
 
     try {
@@ -44,7 +44,12 @@ async function doLogin(username, password) {
         console.log(json);
 
         if(json.user) {
-            displayMessage("success", "Login success", ".message-container")
+            // displayMessage("success", "Login success", ".message-container")
+
+            saveToken(json.jwt);
+            saveUser(json.user);
+
+            location.href = "/";
         }
 
         if(json.error) {
