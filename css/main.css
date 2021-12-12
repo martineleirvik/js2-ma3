@@ -92,6 +92,7 @@ button {
   text-decoration: none;
   color: #000;
   padding-right: 1.3rem;
+  padding-left: 1.3rem;
 }
 
 .menu a.active {
@@ -103,4 +104,7 @@ button {
 
 #logout {
   width: auto;
+  border-radius: 6px;
+  padding: 0 10px;
+  margin-left: 20px;
 }
