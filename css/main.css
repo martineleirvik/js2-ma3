@@ -83,3 +83,24 @@ button {
   color: white;
   background: green;
 }
+
+.menu-container {
+  margin-bottom: 2rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #000;
+  padding-right: 1.3rem;
+}
+
+.menu a.active {
+  background: rgb(230, 228, 228);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#logout {
+  width: auto;
+}
